@@ -2,7 +2,7 @@ window.aframeInitObject = [
     {
         preset: "marius",
         type: "pattern",
-        patternUrl: "/marker/test.patt",
+        patternUrl: "/markers/patt/test.patt",
         markersAreaEnabled: false
     },{
         preset: "test",
@@ -13,7 +13,7 @@ window.aframeInitObject = [
     {
         preset: "merblack",
         type: "pattern",
-        patternUrl: "/marker/merblack.patt",
+        patternUrl: "/markers/patt/merblack.patt",
         markersAreaEnabled: false
 
     }
