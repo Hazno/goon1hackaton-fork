@@ -14,5 +14,11 @@ window.aframeInitObject = [
         type: "pattern",
         patternUrl: "/markers/patt/merblack.patt",
         markersAreaEnabled: false
+    },
+    {
+        preset: "alex",
+        type: "pattern",
+        patternUrl: "/markers/patt/familiebonus.patt",
+        markersAreaEnabled: false
     }
 ];
