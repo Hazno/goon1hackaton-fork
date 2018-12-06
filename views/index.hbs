@@ -3,8 +3,11 @@
 		<div class="menu col-xs-12 col-sm-12">
 			<a-scene embedded arjs>
 
-                <a-marker preset="marius" emitevents="true">
-                    <a-box position='0 0.5 0' material='color: green;'></a-box>
+                <a-marker preset="iphone8" emitevents="true" >
+                    <a-entity
+                            obj-model="obj: url(Obj/iphone8/iphone 8.obj); mtl: url(Obj/iphone8/iphone_8.mtl);"
+                            scale="0.005 0.005 0.005" position='.5 0 1.3'>
+                    </a-entity>
                 </a-marker>
 
                 <a-marker preset="familiebonus" markerhandler emitevents="true" cursor="rayOrigin: mouse" id="familiebonus-marker">
@@ -12,18 +15,21 @@
                     <a-text position='-1.8 0.5 0.5' rotation="-90 0 0" value="Trykk for å se kampanje på telenor.no!"></a-text>
                 </a-marker>
 
-                <a-marker preset="merblack" emitevents="true">
-                    <a-box position='0 0.5 0' material='color: white;'></a-box>
+                <a-marker preset="car" emitevents="true">
+                    <a-entity
+                            obj-model="obj: url(Obj/car/Shelby.obj); mtl: url(Obj/car/Shelby.mtl);"
+                            scale="0.25 0.25 0.25" position='-0.1 0 0.5'>
+                    </a-entity>
                 </a-marker>
 
 				<a-marker preset="logo" emitevents="true">
-					<a-box position='-0.75 0 -0.75' material='color: blue;'></a-box>
-					<a-box position='-0.75 0 0.75' material='color: green;'></a-box>
-					<a-box position='0.75 0 -0.75' material='color: red;'></a-box>
-					<a-box position='0.75 0 0.75' material='color: white;'></a-box>
+					<a-box product-picker id="box1" class="product blue" position='-0.75 0 -0.75' material='color: blue;'></a-box>
+					<a-box product-picker id="box2" class="product green" position='0.75 0 -0.75' material='color: green;'></a-box>
+					<a-box product-picker id="box3" class="product red" position='-0.75 0 0.75' material='color: red;'></a-box>
+					<a-box product-picker id="box4" class="product white" position='0.75 0 0.75' material='color: white;'></a-box>
 				</a-marker>
 
-				<a-entity camera></a-entity>
+				<a-entity camera position="0 0.1 0" fov="135"></a-entity>
 			</a-scene>
 		</div>
 	</div>

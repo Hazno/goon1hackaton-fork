@@ -1,8 +1,8 @@
 window.aframeInitObject = [
     {
-        preset: "marius",
+        preset: "iphone8",
         type: "pattern",
-        patternUrl: "/markers/patt/test.patt",
+        patternUrl: "/markers/patt/merblack.patt",
         markersAreaEnabled: false
     },{
         preset: "familiebonus",
@@ -10,9 +10,9 @@ window.aframeInitObject = [
         patternUrl: "/markers/patt/familiebonus.patt",
         markersAreaEnabled: false
     },{
-        preset: "merblack",
+        preset: "car",
         type: "pattern",
-        patternUrl: "/markers/patt/merblack.patt",
+        patternUrl: "/markers/patt/test.patt",
         markersAreaEnabled: false
     },{
         preset: "alex",
