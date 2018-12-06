@@ -19,13 +19,13 @@
                 </a-marker>
 
 				<a-marker preset="logo" emitevents="true">
-					<a-box position='-0.75 0 -0.75' material='color: blue;'></a-box>
-					<a-box position='-0.75 0 0.75' material='color: green;'></a-box>
-					<a-box position='0.75 0 -0.75' material='color: red;'></a-box>
-					<a-box position='0.75 0 0.75' material='color: white;'></a-box>
+					<a-box product-picker id="box1" class="product blue" position='-0.75 0 -0.75' material='color: blue;'></a-box>
+					<a-box product-picker id="box2" class="product green" position='0.75 0 -0.75' material='color: green;'></a-box>
+					<a-box product-picker id="box3" class="product red" position='-0.75 0 0.75' material='color: red;'></a-box>
+					<a-box product-picker id="box4" class="product white" position='0.75 0 0.75' material='color: white;'></a-box>
 				</a-marker>
 
-				<a-entity camera></a-entity>
+				<a-entity camera position="0 0.1 0" fov="135"></a-entity>
 			</a-scene>
 		</div>
 	</div>
