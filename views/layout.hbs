@@ -7,12 +7,21 @@
 	    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
 	    <!--<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>-->
         <script src="/js/events.js"></script>
+        {{#if hideARDebugMode}}
+            <style type="text/css">
+                #arjsDebugUIContainer,
+                .a-enter-vr {
+                    display: none;
+                }
+            </style>
+        {{/if}}
         <script src="/js/aframe-ar-init.js"></script>
         <script src="/js/aframe-ar.js"></script>
     </head>
     <body>
         {{{body}}}
     </body>
+
     <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" async src="/js/index.js"></script>
 </html>
