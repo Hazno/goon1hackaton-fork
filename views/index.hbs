@@ -2,6 +2,9 @@
 	<div class="row">
 		<div class="menu col-xs-12 col-sm-12">
 			<a-scene embedded arjs>
+                <a-assets>
+                    <video id="video" preload="none" poster="xxxxxxx" src="/Obj/Telenor reklame - Gutta.mp4"></video>
+                </a-assets>
 
                 <a-marker preset="spider" emitevents="true" >
                     <a-entity
@@ -16,7 +19,7 @@
                 </a-marker>
                 <a-marker preset="spinner" emitevents="true">
 
-                    <a-video rotation="0 0 0" position="0 0 -0.5" src="/Obj/Telenor reklame - Gutta.mp4"></a-video>
+                    <a-video videoimage src="#video" rotation="0 0 0" position="0 0 -0.5"></a-video>
 
                 </a-marker>
 

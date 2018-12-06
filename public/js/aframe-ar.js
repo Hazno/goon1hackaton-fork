@@ -7983,6 +7983,7 @@ ARjs.MarkersAreaUtils.createDefaultMarkersControlsParameters = function(tracking
 //////////////////////////////////////////////////////////////////////////////
 //		arjs-anchor
 //////////////////////////////////////////////////////////////////////////////
+var oneInit = false;
 AFRAME.registerComponent('arjs-anchor', {
     dependencies: ['arjs', 'artoolkit'],
     schema: {
@@ -8018,6 +8019,7 @@ AFRAME.registerComponent('arjs-anchor', {
         },
     },
     init: function () {
+        console.log("INIT TRIGGERED");
         var _this = this
 
         // get arjsSystem
@@ -8041,7 +8043,7 @@ AFRAME.registerComponent('arjs-anchor', {
         var startedAt = Date.now()
         var timerId = setInterval(function(){
             // wait until the system is isReady
-            if( arjsSystem.isReady === false )	return
+            if( arjsSystem.isReady === false || oneInit )	return
 
             clearInterval(timerId)
 
@@ -8080,6 +8082,8 @@ AFRAME.registerComponent('arjs-anchor', {
                     }
                 }
             }
+            console.log("oneInit", oneInit);
+            //oneInit = true;
 
             //////////////////////////////////////////////////////////////////////////////
             //		create arAnchor

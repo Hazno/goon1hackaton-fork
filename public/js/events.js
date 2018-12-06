@@ -31,3 +31,26 @@ AFRAME.registerComponent('product-picker', {
 		});
 	}
 });
+
+AFRAME.registerComponent('artoolkit', {
+    init: function () {
+        var sceneEl = document.querySelector('a-scene');
+        console.log("this", this, sceneEl);
+        var video = sceneEl.querySelector('video');
+        var Avideo = sceneEl.querySelector('a-video');
+        console.log("video", video);
+        var canvas = document.getElementsByClassName('a-canvas');
+        //Avideo.removeEventListener('click', clickFunction);
+        Avideo.addEventListener('click', clickFunction);
+
+        function clickFunction() {
+            console.log("video CLICK", video, video.paused);
+            if (video.paused == true) {
+                video.play();
+            }
+            //} else {
+            //    video.pause();
+            //}
+        }
+    }
+});
