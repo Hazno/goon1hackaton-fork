@@ -5,7 +5,7 @@ window.aframeInitObject = [
         patternUrl: "/markers/patt/test.patt",
         markersAreaEnabled: false
     },{
-        preset: "test",
+        preset: "familiebonus",
         type: "pattern",
         patternUrl: "/markers/patt/familiebonus.patt",
         markersAreaEnabled: false
