@@ -13,3 +13,19 @@ AFRAME.registerComponent('markerhandler', {
             }
         });
     }});
+
+AFRAME.registerComponent('refmarker', {
+
+    init: function () {
+        console.log(this);
+        const zoomInAnimation = document.querySelector("#zoomInAnimation");
+        this.el.addEventListener("markerFound", (e)=>{
+            console.log("MarkerFound");
+            if (familiebonusMarker.object3D.visible) {
+                zoomInAnimation.emit('start');
+            }
+        });
+
+    }
+
+});
