@@ -2,7 +2,7 @@ window.aframeInitObject = [
     {
         preset: "marius",
         type: "pattern",
-        patternUrl: "/markers/patt/telenor-logo.patt",
+        patternUrl: "/markers/patt/test.patt",
         markersAreaEnabled: false
     },{
         preset: "familiebonus",
