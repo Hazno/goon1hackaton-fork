@@ -2,12 +2,15 @@
     <div class="row">
         <div class="menu col-xs-12 col-sm-12">
 	        <a-scene embedded arjs>
-		        <a-marker preset='alex'>
+		        <a-marker refmarker preset='alex'>
                     <a-entity
-                            obj-model="obj: url(Obj/s7.obj); mtl: url(Obj/color_texture_invert.jpg)"
-                            scale="0.01 0.01 0.01" position='0 0 0'>
+                            obj-model="obj: url(Obj/s7.obj); mtl: url(Obj/iPhone 6.mtl);"
+                            scale="0.00 0.00 0.00" position='0 0 0'>
                             <a-animation attribute="rotation" dur="7000" to="360 360 0" easing="linear" repeat="indefinite">
                             </a-animation>
+
+                        <a-animation id="zoomInAnimation" attribute="scale" begin="5000" to="0.01 0.01 0.01"></a-animation>
+
                     </a-entity>
 		        </a-marker>
 		        <a-entity camera></a-entity>
