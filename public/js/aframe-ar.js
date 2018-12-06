@@ -4831,6 +4831,8 @@ THREEx.ArMarkerControls.prototype.updateWithModelViewMatrix = function(modelView
     markerObject3D.matrix.decompose(markerObject3D.position, markerObject3D.quaternion, markerObject3D.scale)
 
     // dispatchEvent
+    if(window.markerBecameVisible)
+        window.markerBecameVisible(this);
     this.dispatchEvent( { type: 'markerFound' } );
 }
 

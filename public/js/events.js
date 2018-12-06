@@ -32,7 +32,18 @@ AFRAME.registerComponent('product-picker', {
 	}
 });
 
-AFRAME.registerComponent('artoolkit', {
+window.markerBecameVisible = function(Object) {
+    if(Object.parameters.patternUrl === "/markers/patt/test.patt") {
+        var sceneEl = document.querySelector('a-scene');
+        var video = sceneEl.querySelector('video');
+        if(video.paused)
+            video.play();
+    }
+};
+
+
+/*
+AFRAME.registerComponent('artoolkit', { // Play video on click
     init: function () {
         var sceneEl = document.querySelector('a-scene');
         console.log("this", this, sceneEl);
@@ -54,3 +65,4 @@ AFRAME.registerComponent('artoolkit', {
         }
     }
 });
+*/

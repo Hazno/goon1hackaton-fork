@@ -3,7 +3,7 @@
 		<div class="menu col-xs-12 col-sm-12">
 			<a-scene embedded arjs>
                 <a-assets>
-                    <video id="video" preload="none" poster="xxxxxxx" src="/Obj/Telenor reklame - Gutta.mp4"></video>
+                    <video id="video" preload="none" poster="/Obj/color_texture_invert.jpg" src="/Obj/Telenor reklame - Gutta.mp4"></video>
                 </a-assets>
 
                 <a-marker preset="spider" emitevents="true" >
@@ -17,10 +17,8 @@
                     <a-box id="box-model" position='0 0 0' material='color: blue;' scale="0.8 0.8 0.8" opacity="0.5"></a-box>
                     <a-text position='-1.8 0.5 0.5' rotation="-90 0 0" value="Trykk for å se kampanje på telenor.no!"></a-text>
                 </a-marker>
-                <a-marker preset="spinner" emitevents="true">
-
-                    <a-video videoimage src="#video" rotation="0 0 0" position="0 0 -0.5"></a-video>
-
+                <a-marker registerevents cursor="rayOrigin: mouse" preset="spinner">
+                    <a-video src="#video" width="3" height="1.5" rotation="0 0 0" position="0 0 -0.5"></a-video>
                 </a-marker>
 
 				<a-marker preset="logo" emitevents="true">
