@@ -2,7 +2,7 @@ window.aframeInitObject = [
     {
         preset: "spider",
         type: "pattern",
-        patternUrl: "/markers/patt/merblack.patt",
+        patternUrl: "/markers/patt/spider.patt",
         markersAreaEnabled: false
     },{
         preset: "familiebonus", //phone
@@ -12,7 +12,7 @@ window.aframeInitObject = [
     },{
         preset: "video",
         type: "pattern",
-        patternUrl: "/markers/patt/test.patt",
+        patternUrl: "/markers/patt/fleksi.patt",
         markersAreaEnabled: false
     },{
         preset: "alex",
