@@ -2,17 +2,17 @@ window.aframeInitObject = [
     {
         preset: "spider",
         type: "pattern",
-        patternUrl: "/markers/patt/merblack.patt",
+        patternUrl: "/markers/patt/spider.patt",
         markersAreaEnabled: false
     },{
-        preset: "familiebonus",
+        preset: "familiebonus", //phone
         type: "pattern",
         patternUrl: "/markers/patt/familiebonus.patt",
         markersAreaEnabled: false
     },{
-        preset: "spinner",
+        preset: "video",
         type: "pattern",
-        patternUrl: "/markers/patt/test.patt",
+        patternUrl: "/markers/patt/fleksi.patt",
         markersAreaEnabled: false
     },{
         preset: "alex",
@@ -24,5 +24,15 @@ window.aframeInitObject = [
 		type: "pattern",
 		patternUrl: "/markers/patt/telenor-logo.patt",
 		markersAreaEnabled: false
-	}
+	},{
+        preset: "qrcode",
+        type: "pattern",
+        patternUrl: "/markers/patt/qrcode-marker.patt",
+        markersAreaEnabled: false
+    }, {
+        preset: "phone",
+        type: "pattern",
+        patternUrl: "/markers/patt/phone.patt",
+        markersAreaEnabled: false
+    }
 ];

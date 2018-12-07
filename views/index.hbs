@@ -1,9 +1,17 @@
+<div id="alertmessage">Du må trykke for å spille av videoen!</div>
 <div class="container">
 	<div class="row">
 		<div class="menu col-xs-12 col-sm-12">
 			<a-scene embedded arjs>
                 <a-assets>
-                    <video id="video" preload="none" poster="/Obj/color_texture_invert.jpg" src="/Obj/Telenor reklame - Gutta.mp4"></video>
+                    <video id="video" autoplay muted preload="none" poster="/Obj/color_texture_invert.jpg" src="/Obj/Telenor reklame - Gutta.mp4"></video>
+                </a-assets>
+                <a-assets>
+                    <img id="qrcodetexture" src="/markers/qrcode-marker-finished.jpg">
+                    <img id="iphone" src="/markers/iphone.png">
+                    <img id="doro" src="/markers/doro.png">
+                    <img id="ipad" src="/markers/ipad.png">
+                    <img id="apple-watch" src="/markers/apple-watch.png">
                     <img id="logo-img" src="/Obj/telenor-logo.png">
                 </a-assets>
 
@@ -18,17 +26,31 @@
                     <a-box id="box-model" position='0 0 0' material='color: #0068B9;' scale="1 0.2 1" opacity="0.9"></a-box>
                     <a-image id="logo-img" src="#logo-img" position='0 0.3 0' rotation="-90 0 0"></a-image>
                 </a-marker>
-
-                <a-marker registerevents cursor="rayOrigin: mouse" preset="spinner">
+                <a-marker cursor="rayOrigin: mouse" preset="video">
                     <a-video src="#video" width="3" height="1.5" rotation="0 0 0" position="0 0 -0.5"></a-video>
                 </a-marker>
 
+                <a-marker cursor="rayOrigin: mouse" preset="qrcode">
+                    <a-box src="#qrcodetexture" rotation="90 0 0" position="0" depth="0.005" height="2" width="2"></a-box>
+                </a-marker>
+
 				<a-marker preset="logo" emitevents="true">
-					<a-box product-picker id="box1" class="product blue" position='-0.75 0 -0.75' material='color: blue;'></a-box>
-					<a-box product-picker id="box2" class="product green" position='0.75 0 -0.75' material='color: green;'></a-box>
-					<a-box product-picker id="box3" class="product red" position='-0.75 0 0.75' material='color: red;'></a-box>
-					<a-box product-picker id="box4" class="product white" position='0.75 0 0.75' material='color: white;'></a-box>
+					<a-box src="#iphone" product-picker class="product iphone" position='-0.75 0 -0.75' depth="0.005" rotation="90 180 0"></a-box>
+					<a-box src="#ipad" product-picker class="product ipad" position='0.75 0 -0.75' depth="0.005" rotation="90 180 0"></a-box>
+					<a-box src="#doro" product-picker class="product doro" position='-0.75 0 0.75' depth="0.005" rotation="90 180 0"></a-box>
+					<a-box src="#apple-watch" product-picker class="product apple-watch" position='0.75 0 0.75' depth="0.005" rotation="90 180 0"></a-box>
 				</a-marker>
+
+                <a-marker refmarker preset='phone'>
+                    <a-entity
+                            obj-model="obj: url(Obj/s7.obj);"
+                            scale="0.00 0.00 0.00" position='0 0 0'>
+                        <a-animation attribute="rotation" dur="7000" to="360 360 0" easing="linear" repeat="indefinite">
+                        </a-animation>
+
+                        <a-animation id="zoomInAnimation" attribute="scale" begin="zoomIn" to="0.01 0.01 0.01"></a-animation>
+                    </a-entity>
+                </a-marker>
 
 				<a-entity camera position="0 0.1 0" fov="135"></a-entity>
 			</a-scene>

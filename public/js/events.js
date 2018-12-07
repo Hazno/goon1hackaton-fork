@@ -35,37 +35,44 @@ AFRAME.registerComponent('product-picker', {
 	}
 });
 
-window.markerBecameVisible = function(Object) {
-    if(Object.parameters.patternUrl === "/markers/patt/test.patt") {
+var stopped = true;
+var lastCheck = false;
+setInterval(function() {
+    if(!lastCheck) {
         var sceneEl = document.querySelector('a-scene');
         var video = sceneEl.querySelector('video');
-        if(video.paused)
+        if(!video.paused) {
+            video.pause();
+            $("#alertmessage").css("display", "none");
+        }
+    }
+    lastCheck = false;
+}, 100);
+
+window.markerBecameVisible = function(Object) {
+    lastCheck = true;
+    if(Object.parameters.patternUrl === "/markers/patt/fleksi.patt") {
+        var sceneEl = document.querySelector('a-scene');
+        var video = sceneEl.querySelector('video');
+        if(video.paused) {
             video.play();
+            if(video.muted) {
+                $("#alertmessage").css("display", "block");
+            }
+        }
+    }
+    if(Object.parameters.patternUrl === "/markers/patt/phone.patt") {
+        var sceneEl = document.querySelector('a-scene');
+        var zoomInAnimation = sceneEl.querySelector('#zoomInAnimation');
+        zoomInAnimation.emit('start');
     }
 };
 
 
-/*
-AFRAME.registerComponent('artoolkit', { // Play video on click
-    init: function () {
-        var sceneEl = document.querySelector('a-scene');
-        console.log("this", this, sceneEl);
-        var video = sceneEl.querySelector('video');
-        var Avideo = sceneEl.querySelector('a-video');
-        console.log("video", video);
-        var canvas = document.getElementsByClassName('a-canvas');
-        //Avideo.removeEventListener('click', clickFunction);
-        Avideo.addEventListener('click', clickFunction);
-
-        function clickFunction() {
-            console.log("video CLICK", video, video.paused);
-            if (video.paused == true) {
-                video.play();
-            }
-            //} else {
-            //    video.pause();
-            //}
-        }
+document.addEventListener('click', function() {
+    var sceneEl = document.querySelector('a-scene');
+    var video = sceneEl.querySelector('video');
+    if(video.muted) {
+        video.muted = false;
     }
 });
-*/

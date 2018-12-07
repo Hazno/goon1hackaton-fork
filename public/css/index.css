@@ -1,3 +1,12 @@
 body {
     background: grey;
 }
+
+#alertmessage {
+    position: absolute;
+    font-size: 40px;
+    z-index: 9999;
+    left: 50px;
+    top: 50px;
+    display: none;
+}
