@@ -58,7 +58,13 @@ window.markerBecameVisible = function(Object) {
             }
         }
     }
+    if(Object.parameters.patternUrl === "/markers/patt/phone.patt") {
+        var sceneEl = document.querySelector('a-scene');
+        var zoomInAnimation = sceneEl.querySelector('#zoomInAnimation');
+        zoomInAnimation.emit('start');
+    }
 };
+
 
 document.addEventListener('click', function() {
     var sceneEl = document.querySelector('a-scene');
