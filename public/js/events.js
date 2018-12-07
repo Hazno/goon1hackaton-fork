@@ -1,5 +1,11 @@
 AFRAME.registerComponent('markerhandler', {
 	init: function () {
+        var zoomInAnimation = document.querySelector('#zoomInAnimation');
+
+        zoomInAnimation.addEventListener("animationend", (e)=>{
+
+            phoneAnimationOn = false;
+        });
 		const familiebonusMarker = document.querySelector("#familiebonus-marker");
 
         familiebonusMarker.addEventListener('click', function(ev){
@@ -34,9 +40,12 @@ AFRAME.registerComponent('product-picker', {
 
 var stopped = true;
 var lastCheck = false;
+var phoneAnimationOn = false;
+var phoneAnimationIsPlayed = false;
 setInterval(function() {
     if(!lastCheck) {
         var sceneEl = document.querySelector('a-scene');
+        phoneAnimationIsPlayed = false;
         var video = sceneEl.querySelector('video');
         if(!video.paused) {
             video.pause();
@@ -61,7 +70,11 @@ window.markerBecameVisible = function(Object) {
     if(Object.parameters.patternUrl === "/markers/patt/phone.patt") {
         var sceneEl = document.querySelector('a-scene');
         var zoomInAnimation = sceneEl.querySelector('#zoomInAnimation');
-        zoomInAnimation.emit('start');
+        if(!phoneAnimationOn && !phoneAnimationIsPlayed) {
+            phoneAnimationOn = true;
+            phoneAnimationIsPlayed = true;
+            zoomInAnimation.emit('zoomIn');
+        }
     }
 };
 
