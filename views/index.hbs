@@ -5,6 +5,9 @@
                 <a-assets>
                     <video id="video" preload="none" poster="/Obj/color_texture_invert.jpg" src="/Obj/Telenor reklame - Gutta.mp4"></video>
                 </a-assets>
+                <a-assets>
+                    <img id="qrcodetexture" src="/markers/qrcode-marker-finished.jpg">
+                </a-assets>
 
                 <a-marker preset="spider" emitevents="true" >
                     <a-entity
@@ -17,8 +20,12 @@
                     <a-box id="box-model" position='0 0 0' material='color: blue;' scale="0.8 0.8 0.8" opacity="0.5"></a-box>
                     <a-text position='-1.8 0.5 0.5' rotation="-90 0 0" value="Trykk for å se kampanje på telenor.no!"></a-text>
                 </a-marker>
-                <a-marker registerevents cursor="rayOrigin: mouse" preset="spinner">
+                <a-marker cursor="rayOrigin: mouse" preset="video">
                     <a-video src="#video" width="3" height="1.5" rotation="0 0 0" position="0 0 -0.5"></a-video>
+                </a-marker>
+
+                <a-marker cursor="rayOrigin: mouse" preset="qrcode">
+                    <a-box src="#qrcodetexture" rotation="90 0 0" position="0" depth="0.005" height="2" width="2"></a-box>
                 </a-marker>
 
 				<a-marker preset="logo" emitevents="true">

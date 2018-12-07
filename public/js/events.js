@@ -33,6 +33,7 @@ AFRAME.registerComponent('product-picker', {
 });
 
 window.markerBecameVisible = function(Object) {
+    console.log(Object.parameters.patternUrl);
     if(Object.parameters.patternUrl === "/markers/patt/test.patt") {
         var sceneEl = document.querySelector('a-scene');
         var video = sceneEl.querySelector('video');
