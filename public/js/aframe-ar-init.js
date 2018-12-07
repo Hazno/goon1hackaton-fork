@@ -29,6 +29,10 @@ window.aframeInitObject = [
         type: "pattern",
         patternUrl: "/markers/patt/qrcode-marker.patt",
         markersAreaEnabled: false
-
+    }, {
+        preset: "phone",
+        type: "pattern",
+        patternUrl: "/markers/patt/phone.patt",
+        markersAreaEnabled: false
     }
 ];
