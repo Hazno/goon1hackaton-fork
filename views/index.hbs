@@ -4,6 +4,7 @@
 			<a-scene embedded arjs>
                 <a-assets>
                     <video id="video" preload="none" poster="/Obj/color_texture_invert.jpg" src="/Obj/Telenor reklame - Gutta.mp4"></video>
+                    <img id="logo-img" src="/Obj/telenor-logo.png">
                 </a-assets>
 
                 <a-marker preset="spider" emitevents="true" >
@@ -13,10 +14,11 @@
                     </a-entity>
                 </a-marker>
 
-                <a-marker preset="familiebonus" markerhandler emitevents="true" cursor="rayOrigin: mouse" id="familiebonus-marker">
-                    <a-box id="box-model" position='0 0 0' material='color: blue;' scale="0.8 0.8 0.8" opacity="0.5"></a-box>
-                    <a-text position='-1.8 0.5 0.5' rotation="-90 0 0" value="Trykk for å se kampanje på telenor.no!"></a-text>
+                <a-marker telenor-redirect id="familiebonus-marker" cursor="rayOrigin: mouse" preset="familiebonus" emitevents="true">
+                    <a-box id="box-model" position='0 0 0' material='color: #0068B9;' scale="1 0.2 1" opacity="0.9"></a-box>
+                    <a-image id="logo-img" src="#logo-img" position='0 0.3 0' rotation="-90 0 0"></a-image>
                 </a-marker>
+
                 <a-marker registerevents cursor="rayOrigin: mouse" preset="spinner">
                     <a-video src="#video" width="3" height="1.5" rotation="0 0 0" position="0 0 -0.5"></a-video>
                 </a-marker>

@@ -1,13 +1,16 @@
-AFRAME.registerComponent('markerhandler', {
+
+AFRAME.registerComponent('telenor-redirect', {
+
 	init: function () {
 		const familiebonusMarker = document.querySelector("#familiebonus-marker");
 
-        familiebonusMarker.addEventListener('click', function(ev){
-            if (familiebonusMarker.object3D.visible == true && ev.detail.cursorEl) {
+		familiebonusMarker.addEventListener('click', function(e) {
+            if (familiebonusMarker.object3D.visible == true) {
                 window.location.href = "https://telenor.no";
             }
         });
-    }});
+    }
+});
 
 AFRAME.registerComponent('refmarker', {
 
