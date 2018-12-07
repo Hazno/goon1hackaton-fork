@@ -8,6 +8,10 @@
                 </a-assets>
                 <a-assets>
                     <img id="qrcodetexture" src="/markers/qrcode-marker-finished.jpg">
+                    <img id="iphone" src="/markers/iphone.png">
+                    <img id="doro" src="/markers/doro.png">
+                    <img id="ipad" src="/markers/ipad.png">
+                    <img id="apple-watch" src="/markers/apple-watch.png">
                 </a-assets>
 
                 <a-marker preset="spider" emitevents="true" >
@@ -30,10 +34,10 @@
                 </a-marker>
 
 				<a-marker preset="logo" emitevents="true">
-					<a-box product-picker id="box1" class="product blue" position='-0.75 0 -0.75' material='color: blue;'></a-box>
-					<a-box product-picker id="box2" class="product green" position='0.75 0 -0.75' material='color: green;'></a-box>
-					<a-box product-picker id="box3" class="product red" position='-0.75 0 0.75' material='color: red;'></a-box>
-					<a-box product-picker id="box4" class="product white" position='0.75 0 0.75' material='color: white;'></a-box>
+					<a-box src="#iphone" product-picker class="product iphone" position='-0.75 0 -0.75' depth="0.005" rotation="90 180 0"></a-box>
+					<a-box src="#ipad" product-picker class="product ipad" position='0.75 0 -0.75' depth="0.005" rotation="90 180 0"></a-box>
+					<a-box src="#doro" product-picker class="product doro" position='-0.75 0 0.75' depth="0.005" rotation="90 180 0"></a-box>
+					<a-box src="#apple-watch" product-picker class="product apple-watch" position='0.75 0 0.75' depth="0.005" rotation="90 180 0"></a-box>
 				</a-marker>
 
                 <a-marker refmarker preset='phone'>
